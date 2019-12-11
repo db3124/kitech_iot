@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CSS 선택자</title>
+
+    <style>
+        /*전체선택*/
+        * {
+            /*color: red*/
+        }
+
+        /*태그선택*/
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: lightgoldenrodyellow
+        }
+
+        h1, p {
+            background-color: lightseagreen
+        }
+
+        /*아이디선택자*/
+        #header {
+            background-color: red;
+            /*color: white*/
+        }
+        
+        #contents {
+            background-color: blue;
+           /* color: white*/
+        }
+        
+        #footer {
+            background-color: darkgreen;
+           /* color: white*/
+        }
+        
+        /*클래스선택자*/
+        .text_color {
+            color: white
+        }
+        
+        .select {
+            font-style: italic;
+            font-weight: 100
+        }
+        
+        /*속성 선택자*/
+        input[type=text]{
+            background-color: lightgray;
+            color: sandybrown
+        }
+        
+        input[type=password] {
+            background-color: red;
+            color: yellow
+        }     
+
+        /*자손 선택자*/
+        div.box>h1 {
+            background-color: beige;
+            color: black
+        }
+        
+        /*후손 선택자*/
+        div.box h1 {
+            font-style: italic
+        }
+        
+        /*동위 선택자*/
+        h1.se + h2 {
+            color:blueviolet
+        }
+        
+        h1.se ~ h2.se2 {
+            color:darkseagreen 
+        }
+        
+        
+        div.click {
+            background-color: blue;
+            height: 100px;
+            width: 500px
+        }
+        
+        /*반응 선택자*/
+        div.click:hover {
+            background-color: red;
+        }
+        
+        div.click:active {
+            background-color: fuchsia;
+        }
+        
+        /*상태 선택자*/
+        input:enabled {
+            background-color: green
+        }
+        
+        input:disabled {
+            background-color: black
+        }
+        
+        input:focus {
+            background-color: blueviolet
+        }
+        
+    </style>  
+
+</head>
+
+<body>
+    
+    <input> <br>
+    <input disabled>
+    
+    <hr>
+    
+    <div class="click"></div>
+    
+    <hr>
+    
+    <h1 class="se">header-1</h1>
+    <h2>header-2</h2>
+    <h2 class="se2">header-2</h2>
+    <h2>header-2</h2>
+    <h2>header-2</h2>
+    
+    <hr>
+    
+    <div class="box">
+        <h1>h1-1</h1>
+        <h2>h2-1</h2>
+        <ul>
+            <li><h1>li-h1</h1></li>
+            <li><h1>li-h2</h1></li>
+            <li><h1>li-h3</h1></li>
+        </ul>
+    </div>
+    
+    <hr>
+    
+    <input type="text">
+    <input type="password">
+    
+
+    <div id="header" class="text_color">
+        <h3>header</h3>
+    </div>
+    
+    <div id="contents">
+        <h3 class="text_color select">contents</h3>
+    </div>
+    
+    <div id="footer" class="text_color">
+        <h3>footer</h3>
+    </div>
+
+    <hr>
+
+    <h1>네이버 앱으로 국민연금 신청•납부한다</h1>
+
+    <p>이번 MOU를 통해 양사는 ▲네이버 플랫폼에서 다양한 국민연금 관련 정보를 제공하고 ▲네이버 앱을 통해 국민연금 신청부터 신고, 모바일 납부까지 원스톱으로 가능하게 하는 등 사용자 편의성을 증진시키고 다양한 사회적 가치를 창출하기 위해 상호협력하기로 했다. 내년 3월 중으로는 모바일 네이버 기반의 연금 서비스를 선보일 계획이다.</p>
+
+</body>
+
+</html>
