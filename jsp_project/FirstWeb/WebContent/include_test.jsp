@@ -9,10 +9,15 @@
 <style>
 	div {
 		text-align: center;
+		border: 1px solid #777;
 	}
 	div.left , div.right {
-		width : 50%;
+		width : 40%;
 		float : left;
+	}
+	
+	div.footer {
+		clear : both;
 	}
 </style>
 </head>
@@ -21,16 +26,12 @@
 	<%@ include file="include/top.jsp" %>
 	<%@ include file="include/left.jsp" %>
 	<%@ include file="include/right.jsp" %>
-
-
-
-
-
-
-
-
-
-
+	
+	<jsp:include page="include/footer.jsp">
+		<jsp:param value="1" name="menu_code"/>
+		<jsp:param value="test@test.com" name="email"/>
+		<jsp:param value="010-5555-1212" name="tel"/>
+	</jsp:include>
 
 
 
