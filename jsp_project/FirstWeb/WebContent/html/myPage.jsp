@@ -38,10 +38,10 @@
 		
 		<h1>회원 정보</h1>
 		<h3>
-			이름 : <%= info.getName() %> <br>
-			아이디 : <%= info.getId() %> <br>
-			성별 : <%= info.getGender() %> <br>
-			출생년도 : <%= info.getByear() %>
+			이름 : <%= info.getName() %> / ${loginInfo.name} <br>
+			아이디 : <%= info.getId() %> / ${loginInfo.id } <br>
+			성별 : <%= info.getGender() %> / ${loginInfo.gender}<br>
+			출생년도 : <%= info.getByear() %> / ${loginInfo.byear}
 		</h3>
 		<a href="logout.jsp">로그아웃</a>
 		

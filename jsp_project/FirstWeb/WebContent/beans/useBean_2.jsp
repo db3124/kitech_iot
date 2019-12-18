@@ -30,9 +30,9 @@
 		request.setAttribute("member", member);
 	-->
 	
-	<%
+	<%-- <%
 		member.setUname("kim");
-	%>
+	%> --%>
 	
 	<%= member.getByear() %> : <%= member.getUname() %>
 	
@@ -40,9 +40,9 @@
 	
 	<jsp:useBean id="loginInfo" class="member.LoginInfo" scope="session"/>
 	
-	<%
+	<%-- <%
 		loginInfo.setId("queen@naver.com");
-	%>
+	%> --%>
 	
 	<%= loginInfo %>
 	
