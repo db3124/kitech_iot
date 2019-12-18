@@ -40,9 +40,6 @@
 			
 			response.sendRedirect("myPage.jsp");
 		} else {
-			
-		
-		
 	%>
 		<script>
 			

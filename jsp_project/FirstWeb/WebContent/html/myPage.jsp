@@ -26,7 +26,7 @@
 	<%
 		// 로그인 유무 확인 -> session의 속성에 loginInfo 확인
 		LoginInfo info = (LoginInfo)session.getAttribute("loginInfo");
-	
+			
 		if(info==null){
 	%>
 		<script>

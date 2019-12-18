@@ -21,20 +21,30 @@
 </style>
 </head>
 <body>
-
-	<%
-		// 1. 쿠기 객체 생성
-		Cookie c = new Cookie("uname", "son");
-		
-		// 2. response 객체에 포함
-		response.addCookie(c);
-	%>
-
-	<h1>쿠키가 정상적으로 생성되었습니다. <br>
-		<%= c.getName() %> = <%=c.getValue() %>
-	</h1>
 	
-	<a href="viewCookie.jsp">쿠키 정보 보기</a>
-
+	<jsp:useBean id="member" class="member.MemberInfo" scope="request"/>
+	<!--
+		memberInfo member = (memberInfo)request.getAttribute("member");
+		
+		memberInfo member = new memberInfo(); 
+		request.setAttribute("member", member);
+	-->
+	
+	<%
+		member.setUname("kim");
+	%>
+	
+	<%= member.getByear() %> : <%= member.getUname() %>
+	
+	<br>
+	
+	<jsp:useBean id="loginInfo" class="member.LoginInfo" scope="session"/>
+	
+	<%
+		loginInfo.setId("queen@naver.com");
+	%>
+	
+	<%= loginInfo %>
+	
 </body>
 </html>
