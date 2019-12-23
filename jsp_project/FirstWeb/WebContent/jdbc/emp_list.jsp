@@ -1,3 +1,4 @@
+<%@page import="jdbc.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -28,22 +29,24 @@
 <body>
 
 	<%
-		// 1. 드라이버 로딩 : 한 번만 실행해도 됨.
+/*		// 1. 드라이버 로딩 : 한 번만 실행해도 됨.
 		//Class.forName("oracle.jdbc.driver.OracleDriver");
-		
+			
 		// 2. connection
-		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
+ 		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
 		String user = "scott";
 		String pw = "tiger";
-		
-		Connection conn = DriverManager.getConnection(jdbcUrl, user, pw);
+
+		Connection conn = DriverManager.getConnection(jdbcUrl, user, pw); */
+	
+		Connection conn = ConnectionProvider.getConnection();
 		
 		// 3. Statement 객체 생성
 		Statement stmt = conn.createStatement();
-		
+
 		String sql = "select * from emp order by empno";
-		
-		ResultSet rs = stmt.executeQuery(sql);	
+
+		ResultSet rs = stmt.executeQuery(sql);
 	%>
 	<h1>사원 리스트</h1>
 	<hr>

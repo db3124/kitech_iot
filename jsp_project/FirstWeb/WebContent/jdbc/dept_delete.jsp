@@ -12,6 +12,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"
 	integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
 	crossorigin="anonymous">
+	
 </script>
 <style>
 * {
@@ -23,39 +24,38 @@
 <body>
 
 	<%
-		// 한글 처리
-		request.setCharacterEncoding("utf-8");
+	
+		String dno = request.getParameter("dno");
 		
-		String deptno = request.getParameter("deptno");
-		String dname = request.getParameter("dname");
-		String loc = request.getParameter("loc");
-			
+		String sql = "delete from dept where deptno=?";
+		
 /* 		// 1. 드라이버 로드 : 서블릿에서 초기화 처리
 		// 2. Connection 객체 생성
 		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
 		String user = "scott";
-		String pw = "tiger"; 
-
+		String pw = "tiger";
+				
 		Connection conn = DriverManager.getConnection(jdbcUrl, user, pw); */
 		
 		Connection conn = ConnectionProvider.getConnection();
 		
-		String sql = "update dept set dname=?, loc=? where deptno=?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, dname);
-		pstmt.setString(2, loc);
-		pstmt.setInt(3, Integer.parseInt(deptno));
+		pstmt.setInt(1, Integer.parseInt(dno));
 		
 		int result = pstmt.executeUpdate();
 		
 		if(result>0){
 	%>
-	<h1>정상적으로 수정되었습니다.</h1>
+	<h1><%= dno %>번 부서의 정보가 삭제되었습니다.</h1>
 	<% } else { %>
-	<h1>수정된 정보가 없습니다.</h1>
+	<h1>삭제하고자 하는 정보가 없습니다.</h1>
 	<% } %>
 
 	<a href="dept_list.jsp">부서 리스트 보기</a>
+	
+
+
+
 
 
 
