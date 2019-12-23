@@ -31,7 +31,19 @@
 		<param-name>debugMode</param-name>
 		<param-value>code</param-value>
 	</context-param>
-
+	
+	<!-- 서블릿 등록 -->
+	<servlet>
+		<servlet-name>JDBCDriverLoad</servlet-name>
+		<servlet-class>jdbc.DriverLoad</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- 서블릿 매핑 -->
+	<!-- <servlet-mapping>
+		<servlet-name></servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping> -->
 
 </web-app>
 
