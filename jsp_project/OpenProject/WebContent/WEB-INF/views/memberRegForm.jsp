@@ -25,17 +25,16 @@
             
             font-size: 1.3em;
         }
-        
+  
     </style>
-    
-    
+        
 </head>
 
 <body>
 
     <h1 class="title">회원가입</h1>
     <hr>
-    <form action="../beans/usebean_1.jsp" method="post">
+    <form action="reg" method="post">
         <table class="inputBox">
             <tr>
                 <td>아이디(이메일)</td>
@@ -89,13 +88,13 @@
 		
     	$(document).ready(function(){
     		
-    		/* var selectOptions = '';
+    		var selectOptions = '';
     		
     		for(var i=2019; i>=1950; i--) {
 				selectOptions +='<option value="'+i+'">'+i+'</option>\n';    			
     		}
     		
-    		$('#byear').html(selectOptions); */
+    		$('#byear').html(selectOptions);
     		
     	});
     

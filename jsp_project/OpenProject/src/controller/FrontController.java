@@ -10,9 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.DeleteMemberServiceImpl;
+import service.EditFormMemberServiceImpl;
+import service.EditMemberServiceImpl;
 import service.IndexMemberServiceImpl;
+import service.ListMemberServiceImpl;
 import service.MemberService;
 import service.RegFormMemberServiceImpl;
+import service.RegMemberServiceImpl;
 
 public class FrontController extends HttpServlet {
 
@@ -28,18 +33,26 @@ public class FrontController extends HttpServlet {
 		uriMap.put("/index", new IndexMemberServiceImpl());
 		// / member/regForm
 		uriMap.put("/member/regForm", new RegFormMemberServiceImpl());
-		uriMap.put("/member/reg", new RegFormMemberServiceImpl());
+		uriMap.put("/member/reg", new RegMemberServiceImpl());
+		
+		// 회원 리스트
+		uriMap.put("/member/list", new ListMemberServiceImpl());
+		
+		// 회원 정보 수정
+		uriMap.put("/member/editForm", new EditFormMemberServiceImpl());
+		uriMap.put("/member/edit", new EditMemberServiceImpl());
+		
+		// 회원 정보 삭제
+		uriMap.put("/member/delete", new DeleteMemberServiceImpl());
 		
 		// 기능 확장 : Service 구현 클래스 생성, view(jsp) 생성
 		
 	}
-
 	
 	// 2. 모든 요청 처리
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		process(req, resp);
-
 	}
 
 	@Override

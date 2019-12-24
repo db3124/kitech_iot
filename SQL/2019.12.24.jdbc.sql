@@ -17,4 +17,14 @@ create sequence member_idx_seq;
 insert into opmember values (member_idx_seq.nextval, 'test@test.com', 'tester', '1111', 'w', '1990', null);
 insert into opmember values (member_idx_seq.nextval, ?, ?, ?, ?, ?, ?);
 
-select * from opmember;
+select * from opmember order by idx;
+
+select * from opmember where idx=2;
+
+update opmember set uname=?, upw=?, gender=?, byear=? where idx=?;
+update opmember set uname=queen, upw=1234, gender=w, byear=2009 where idx=10;
+
+delete from opmember where idx=?
+;
+
+commit;

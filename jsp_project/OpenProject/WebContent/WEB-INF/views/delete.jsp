@@ -19,30 +19,19 @@
 		padding : 0;
 	}
 	
-	#nav {
-		overflow : hidden;
-		list-style : none;
-		margin : 10px 0;
-		border-top : 1px solid #999;
-		border-bottom : 1px solid #999;
-	}
-	
-	#nav>li {
-		float : left;
-		padding : 3px 30px;
-	}
-	
 </style>
 </head>
-
 <body>
+
+	<c:if test="${resultCnt eq 1}">
+		<h1>회원 정보가 삭제되었습니다.</h1>
+	</c:if>
 	
-	<%@ include file="/WEB-INF/views/frame/header.jsp" %>
-
-	<h1> 회원 관리 프로그램 </h1>
-	<h2> INDEX 페이지 </h2>
-	<H3> ${msg}</H3>
-
+	<c:if test="${resultCnt eq 0 or resultCnt == -1}">
+		<h1>회원정보 삭제 중에 오류가 발생되었습니다. 다시 시도해주세요.</h1>
+	</c:if>
+	
+	<a href="list">회원 리스트 보기</a>
 
 </body>
 </html>
