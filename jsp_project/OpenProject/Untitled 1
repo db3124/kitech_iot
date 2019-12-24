@@ -1,0 +1,16 @@
+1. Controller : Servlet 생성
+---- 분석 -> Service 호출(Service의 특정 메서드 하나만 호출)
+---- 해당 view로 포워딩
+
+2. Service -> 커멘드 패턴
+---- interface에서의 메서드, interface의 메서드를 상속하는 클래스 구현
+---- (1) 인터페이스 구현
+---- (2) 기능 클래스들 : 리스트, 가입, 수정, 삭제
+---- (3) 기능 처리 후, 속성에 데이터 저장
+---- (4) VIEW 페이지 반환
+
+3. 기능별 JSP VIEW페이지 
+
+4. JDBC 관련 클래스
+---- (1) 드라이버 로더 : Servlet -> WAS가 처음 구동할 때 한 번 실행
+---- (2) CONNECTION : 전역 메서드(static)
