@@ -27,4 +27,6 @@ update opmember set uname=queen, upw=1234, gender=w, byear=2009 where idx=10;
 delete from opmember where idx=?
 ;
 
+rollback;
+
 commit;
