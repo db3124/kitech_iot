@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>레이아웃</title>
+        
+        <style>
+            
+            * {/*브라우저별로 다르기 때문*/
+                margin: 0;
+                padding: 0;
+            }
+            
+           /*BODY 초기화*/ 
+            body {
+                background-color: beige;
+            }
+            
+            /*메인 블럭*/
+            #main_wrap {
+                width: 898px;
+                /*height: 300px;*/
+                background-color: #FFF;
+                
+                border: 1px solid #DDD;
+                
+                margin: 10 auto;
+                
+                border-radius: 10px;
+                
+                box-shadow: 10px 10px 10px #DDD;
+            }
+            
+            /*헤더*/
+            #header {
+                height: 100px;
+                
+                background-color: skyblue;
+            }
+            
+            /*네비게이션*/
+            #nav {
+                height: 50px;
+                
+                background-color: palevioletred;
+            }
+            
+            /*콘텐츠 렙*/
+            #content_wrap {
+                overflow: hidden;
+            }
+            
+            /*콘텐츠*/
+            #content {
+                width: 649px;
+                height: 300px;
+                
+                background-color: yellow;
+                
+                float: left;
+            }
+            
+            /*사이드 메뉴*/
+            #aside {
+                width: 249px;
+                height: 200px;
+                
+                background-color: slateblue;
+                
+                float: left;
+            }
+            
+            /*푸터*/
+            #footer {
+                height:100px;
+                
+                background-color: steelblue;
+            }
+            
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        <!--메인 렙-->
+        <div id="main_wrap">
+            <!--페이지 헤더: 로고, BI, CI, TEXT-->
+            <div id="header">HEADER</div>
+            <!--페이지 헤더 종료-->
+            
+            <!--네비게이션: 메뉴, 검색박스-->
+            <div id="nav">NAV</div>
+            <!--네비게이션 종료-->
+            
+            <!--콘텐츠와 사이드 메뉴 감싸는 렙-->
+            <div id="content_wrap">
+                <!--콘텐츠: ARTICLE(제목, 날짜, 이미지, 본문)-->
+                <div id="content">CONTENT</div>
+                <!--콘텐츠 종료-->
+                <!--사이드 메뉴: 카테고리 메뉴-->
+                <div id="aside">ASIDE</div>
+                <!--사이드 메뉴 종료-->
+            </div>
+            <!--콘텐츠 렙 종료-->
+            
+            <!--푸터: 카피라이트, 회사정보, 글로벌 메뉴-->
+            <div id="footer">FOOTER</div>
+            <!--푸터 종료-->
+        </div>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

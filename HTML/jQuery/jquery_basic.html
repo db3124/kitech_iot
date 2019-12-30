@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Basic</title>
+    
+        <!--CDN 방식으로 jQUERY 라이브러리를 로드-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+    
+    <style>
+    
+        .light {
+            
+            width: 50%;
+            height: 50px;
+            
+        }
+        
+    </style>
+    
+    <script>
+        
+        // onload 이벤트와 동일하다.
+        $(document).ready(function(){
+            
+            // 문서 객체 생성
+            $('*').css('color', 'red');
+            
+            // 태그 선택
+            $('h1').css('background', 'black');
+            
+            // id 선택
+            $('h1#two').css('color', 'lightblue');
+            
+            // 클래스 선택
+            $('h1.title').css('color', 'yellow');
+            
+            // :first
+            $('h1:even').css('background', 'green');
+            
+            var array = [
+              {name: '네이버', url: 'https://www.naver.com'}, 
+              {name: '다음', url: 'https://www.daum.net'}, 
+              {name: '구글', url: 'https://www.google.co.kr'}
+            ];
+            
+            // .each(원본, 함수) 메서드를 이용한 배열 처리
+            $.each(array, function(index, item){
+                
+                var output = '';
+                
+                output += '<a href="'+item.url+'">'+item.name+'</a>';
+                
+                document.body.innerHTML += output;
+                
+            });
+            
+            $('h1').each(function(index, item){
+                // innerHtml $(item)=$(this)
+                $(item).html('+' + index); // get
+                
+                if(index%2==0){
+                    $(item).addClass('light');
+                }
+            });
+            
+            var xml = '';
+            xml +='<sites>';
+            xml +='     <site>';
+            xml +='         <name>naver</name>';
+            xml +='         <url>https://www.naver.com</url>';            
+            xml +='     </site>';
+            xml +='     <site>';
+            xml +='         <name>daum</name>';
+            xml +='         <url>https://www.daum.net</url>';            
+            xml +='     </site>';
+            xml +='     <site>';
+            xml +='         <name>google</name>';
+            xml +='         <url>https://www.google.co.kr</url>';            
+            xml +='     </site>';            
+            xml +='</sites>';
+            
+            //String -> xml 객체로 변환
+            var xmlDoc = $.parseXML(xml);
+            
+            $(xmlDoc).find('site').each(function(index){
+               
+                var html = '';
+                
+                html +='<h1><a href="'
+                    +$(this).find('name').text()+'">'
+                    +$(this).find('name').text()+'</a></h1>';
+                
+                document.body.innerHTML += html;
+                
+            });
+        });
+        
+    </script>
+    
+    <body>
+        
+        <h1>header - 0</h1>
+        <h1 id="two">header - 1</h1>
+        <h1 class="title">header - 2</h1>
+        <h1>header - 3</h1>
+        <h1>header - 4</h1>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

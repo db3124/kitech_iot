@@ -1,0 +1,8 @@
+{//object와 비슷한 구조 json->object, object->json
+    "uid" : "hong@naver.com",
+    "upw" : "1111",
+    "uname" : "hong",
+    "age" : 20,
+    "like" : [{}, {}, {}]
+    
+}
