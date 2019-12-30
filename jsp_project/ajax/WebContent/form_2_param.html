@@ -11,9 +11,13 @@
                 var region = $('#region').val();
 
                 // Ajax 요청을 수행합니다.
-                var url = '/parameter';
+                var url = '/ajax/products.jsp';
                 var data = { name: name, region: region };
+                
                 var params = $.param(data);
+                
+                alert(params);
+                
                 $('#wrap').load(url, params);
 
                 // 기본 이벤트를 제거합니다.

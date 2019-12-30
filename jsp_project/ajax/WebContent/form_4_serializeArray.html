@@ -7,7 +7,9 @@
         $(document).ready(function () {
             $('#my-form').submit(function (event) {
                 // Ajax 요청을 수행합니다.
-                $('#wrap').load('/parameter', $(this).serializeArray());
+                alert($(this).serializeArray());
+                
+                $('#wrap').load('/products', $(this).serializeArray());
 
                 // 기본 이벤트를 제거합니다.
                 event.preventDefault();

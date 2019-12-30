@@ -5,11 +5,13 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(document).ready(function () {
-            $('body').load('data.html');
+            $.post('data.html', function (data) {
+                $('body').html(data);
+            });
         });
     </script>
 </head>
 <body>
-	<h1>하이</h1>
+	<h1>안녕하세요</h1>
 </body>
 </html>
