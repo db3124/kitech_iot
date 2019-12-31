@@ -25,15 +25,17 @@
 
 	
 	
-	<c:if test="${resultCnt==1}">
-		<h1>회원 가입입 되었습니다.</h1>
+	<c:if test="${loginChk}">
+		<c:redirect url="${refferPage}" />
 	</c:if>
 
-	<c:if test="${resultCnt==0 or resultCnt == -1}">
-		<h1>회원 가입중에 오류가 발생했습니다. 다시 시도해주세요.</h1>
-		<a href="regForm">회원가입하기</a> 
-	</c:if>
+	<c:if test="${!loginChk}">
+		<script>
+			alert('아이디 혹은 비밀번호가 틀립니다.\n확인 후 다시 로그인 해주세요.');
+			location.href= 'loginForm';
+		</script>
 
+	</c:if>
 
 
 

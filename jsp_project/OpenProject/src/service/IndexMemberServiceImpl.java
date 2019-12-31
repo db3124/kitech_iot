@@ -14,6 +14,7 @@ public class IndexMemberServiceImpl implements MemberService {
 		
 		request.setAttribute("msg", msg);
 		
+		
 		return viewPage;
 	}
 

@@ -1,6 +1,5 @@
 package service;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -10,7 +9,7 @@ import dao.MemberDao;
 import jdbc.ConnectionProvider;
 import model.OpMember;
 
-public class RegMemberServiceImpl implements MemberService {
+public class ReqMemberServiceImpl implements MemberService {
 
 	@Override
 	public String process(HttpServletRequest request) {
@@ -21,14 +20,7 @@ public class RegMemberServiceImpl implements MemberService {
 		// DAO 의 응답은 처리 횟수 : 결과 데이터 -> view 전달 request에 저장
 		// view 응답 데이터를 받아서 
 		
-		String viewPage = "/WEB-INF/views/memberReg.jsp";
-		
-		try {
-			request.setCharacterEncoding("utf-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String viewPage = "/WEB-INF/memberReg.jsp";
 		
 		// 데이터 받기
 		String uid = request.getParameter("uid");
@@ -47,8 +39,6 @@ public class RegMemberServiceImpl implements MemberService {
 				gender, 
 				uphoto);
 		
-		System.out.println("insert Data : " + member);
-		
 		Connection conn = null ;
 		int resultCnt = 0;
 		
@@ -59,16 +49,27 @@ public class RegMemberServiceImpl implements MemberService {
 			
 			resultCnt = dao.insertMember(conn, member);
 			
+			
+		
 		} catch (SQLException se) {
 			resultCnt = -1;
-			se.printStackTrace();
 		}
 				
 		
 		request.setAttribute("resultCnt", resultCnt);
-				
 		
-		return viewPage;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		return null;
 	}
 
 }

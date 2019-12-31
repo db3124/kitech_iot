@@ -30,24 +30,33 @@
 		float : left;
 		padding : 3px 30px;
 	}
+	
+	
 
 </style>
 </head>
 <body>
 
 <%@ include file="/WEB-INF/views/frame/header.jsp" %>
+	
+	
+	<c:if test="${loginInfo ne null}">
+		<h1>회원 정보 </h1>
+		<ul>
+			<li>이름 : ${loginInfo.uname}</li>
+			<li>아이디 : ${loginInfo.uid}</li>
+			<li>성별 : ${loginInfo.gender}</li>
+			<li>태어난 해 : ${loginInfo.byear}</li>
+		</ul>
+	</c:if>
 
-	<h1> 회원 관리 프로그램 </h1>
-	<h2> INDEX 페이지   </h2>
-	<h3> ${msg} </h3>
+	<c:if test="${loginInfo eq null}">
+		<script>
+			alert('로그인이 필요한 서비스 입니다. 확인해주세요.');
+			location.href= '../login/loginForm';
+		</script>
 
-
-
-
-
-
-
-
+	</c:if>
 
 
 

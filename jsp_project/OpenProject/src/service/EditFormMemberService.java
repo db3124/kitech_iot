@@ -7,49 +7,42 @@ import javax.servlet.http.HttpServletRequest;
 
 import dao.MemberDao;
 import jdbc.ConnectionProvider;
+import model.OpMember;
 
-public class IdChkMemberServiceImpl implements MemberService {
+public class EditFormMemberService implements MemberService {
 
 	@Override
 	public String process(HttpServletRequest request) {
 		
-		String viewPage = "/WEB-INF/views/idChk.jsp";
+		String viewPage = "/WEB-INF/views/editForm.jsp";
 		
-		String uid = request.getParameter("uid");
+		// op/member/editForm?midx=2
 		
-		String result = "Y";
+		String idx = request.getParameter("midx");
 		
-		// DB -> id로 검색한 결과가 있다면 result="N"
+		OpMember member = null;
+		
+		Connection conn = null;
 		
 		MemberDao dao = new MemberDao();
-		Connection conn = null;
 		
 		try {
 			conn = ConnectionProvider.getConnection();
 			
-			boolean chk = dao.selectCheckId(conn, uid);
-			
-			if(!chk) {
-				result="N";
-			}
-			
+			member = dao.selectByIdx(conn, Integer.parseInt(idx));
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		request.setAttribute("member", member);
 		
 		
-		request.setAttribute("result", result);
 		
 		return viewPage;
 	}
 
-	
-	
-	
-	
 	
 	
 	

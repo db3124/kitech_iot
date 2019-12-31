@@ -14,14 +14,13 @@ public class MemberDao {
 
 	// 회원 정보 저장 메서드
 	public int insertMember(Connection conn, OpMember member) throws SQLException {
-		
+
 		int result = 0;
-		
 		PreparedStatement pstmt = null;
-		
+
 		// 데이터 저장 SQL
-		String sql = "insert into opmember values (member_idx_seq.nextval, ?, ?, ?, ?, ?, ?)";
-		
+		String sql = "insert into opmember values (MEMBER_IDX_SEQ.nextval, ?, ?, ?, ?, ?, ?)";
+
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, member.getUid());
 		pstmt.setString(2, member.getUname());
@@ -30,45 +29,42 @@ public class MemberDao {
 		pstmt.setInt(5, member.getByear());
 		pstmt.setString(6, member.getUphoto());
 
-		result =  pstmt.executeUpdate();		
-	
-		System.out.println("dao insert result :" + result);
-		
-		pstmt.close();
-		
-		return result;
-	}// end of insertMember
+		result = pstmt.executeUpdate();
 
-	// 회원 리스트 반환
+		System.out.println("dao insert result : " + result);
+
+		pstmt.close();
+
+		return result;
+	}
+
+	// 회원 리스트
 	public List<OpMember> getMemberList(Connection conn) throws SQLException {
-		
-		// 결과 데이터 : list
+
+		// 결과 데이터 : LIST
 		List<OpMember> list = new ArrayList<OpMember>();
-		
+
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		stmt = conn.createStatement();
-		
+
 		// 회원 리스트 SQL
 		String sql = "select * from opmember order by idx";
-		
+
 		// 쿼리 실행 결과
 		rs = stmt.executeQuery(sql);
-		
-		while(rs.next()) {
 
+		while (rs.next()) {			
 			// 객체를 List에 저장
 			list.add(makeOpMember(rs));
-			
 		}
-		
+
 		return list;
-		
-	}// end of List<>
-	
+	}
+
 	private OpMember makeOpMember(ResultSet rs) throws SQLException {
-		
+
 		int idx = rs.getInt("idx");
 		String uname = rs.getString("uname");
 		String uid = rs.getString("uemail");
@@ -76,21 +72,21 @@ public class MemberDao {
 		String gender = rs.getString("gender");
 		int byear = rs.getInt("byear");
 		String uphoto = rs.getString("uphoto");
-		
+
 		// 데이터를 객체에 저장
 		OpMember member = new OpMember(idx, uid, pw, uname, byear, gender, uphoto);
 		
 		return member;
-		
-	}// end of OpMember
-	
+
+	}
+
 	// idx로 회원 정보 검색
 	public OpMember selectByIdx(Connection conn, int idx) throws SQLException {
 		
 		OpMember member = null;
 		
 		PreparedStatement pstmt = null;
-		ResultSet rs;
+		ResultSet rs ;
 		
 		String sql = "select * from opmember where idx=?";
 		
@@ -103,6 +99,7 @@ public class MemberDao {
 			member = makeOpMember(rs);
 		}
 		
+		
 		return member;
 	}
 
@@ -112,7 +109,8 @@ public class MemberDao {
 		
 		PreparedStatement pstmt = null;
 		
-		String sql = "update opmember set uname=?, upw=?, gender=?, byear=? where idx=?";
+		String sql = "update opmember set "
+				+ " uname=?, upw=?, gender=?, byear=? WHERE idx=?";
 		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, member.getUname());
@@ -123,11 +121,12 @@ public class MemberDao {
 		
 		result = pstmt.executeUpdate();
 		
+		
 		return result;
 	}
 
 	public int deleteMemberByIdx(Connection conn, int idx) throws SQLException {
-
+		
 		int result = 0;
 		
 		PreparedStatement pstmt = null;
@@ -137,14 +136,19 @@ public class MemberDao {
 		
 		result = pstmt.executeUpdate();
 		
+		
 		return result;
 	}
-	
+
+
+
 	public OpMember selectByUserIdPw(Connection conn, String uid, String pw) throws SQLException {
 		OpMember member = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "select * from opmember where uemail=? and pw=?";
+		String sql = "select * from opmember where uemail=? and upw=?";
+		
+		System.out.println(uid + " : " + pw);
 		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, uid); 
@@ -158,13 +162,12 @@ public class MemberDao {
 		
 		return member;
 	}
-	
+
 	public boolean selectCheckId(Connection conn, String uid) throws SQLException {
 		
 		boolean result = true;
 		
 		String sql = "select * from opmember where uemail=?";
-		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, uid);
 		ResultSet rs = pstmt.executeQuery();
@@ -173,8 +176,17 @@ public class MemberDao {
 			result = false;
 		}
 		
+		
+		
 		return result;
 	}
 
 	
-}// end of class
+	
+	
+	
+	
+	
+	
+	
+}

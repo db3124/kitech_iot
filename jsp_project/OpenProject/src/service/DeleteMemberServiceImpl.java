@@ -12,20 +12,20 @@ public class DeleteMemberServiceImpl implements MemberService {
 
 	@Override
 	public String process(HttpServletRequest request) {
-
-		String viewPage = "WEB-INF/views/delete.jsp";
+		
+		String viewPage = "/WEB-INF/views/delete.jsp";
 		
 		String idx = request.getParameter("midx");
 		
 		Connection conn = null;
 		
 		MemberDao dao = new MemberDao();
-
+		
 		int result = 0;
 		
 		try {
-			
 			conn = ConnectionProvider.getConnection();
+			
 			result = dao.deleteMemberByIdx(conn, Integer.parseInt(idx));
 			
 		} catch (SQLException e) {

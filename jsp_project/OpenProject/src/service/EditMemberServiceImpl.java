@@ -17,9 +17,11 @@ public class EditMemberServiceImpl implements MemberService {
 		
 		String viewPage = "/WEB-INF/views/edit.jsp";
 		
+
 		try {
 			request.setCharacterEncoding("utf-8");
 		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -32,20 +34,27 @@ public class EditMemberServiceImpl implements MemberService {
 		String gender = request.getParameter("gender");
 		String uphoto = request.getParameter("pfile");
 		
-		OpMember member = new OpMember(Integer.parseInt(idx), uid, pw, uname, Integer.parseInt(byear), gender , uphoto);
+		OpMember member = new OpMember(
+				Integer.parseInt(idx), 
+				uid, 
+				pw, 
+				uname, 
+				Integer.parseInt(byear), 
+				gender, 
+				uphoto);
 		
-		System.out.println("insert data : " + member);
+		System.out.println("insert Data : " + member);
 		
 		Connection conn = null;
-		
 		int result = 0;
 		
 		MemberDao dao = new MemberDao();
 		
 		try {
-			
 			conn = ConnectionProvider.getConnection();
+			
 			result = dao.editMember(conn, member);
+			
 			
 		} catch (SQLException e) {
 			result = -1;
@@ -53,6 +62,8 @@ public class EditMemberServiceImpl implements MemberService {
 		}
 		
 		request.setAttribute("resultCnt", result);
+		
+		
 		
 		return viewPage;
 	}

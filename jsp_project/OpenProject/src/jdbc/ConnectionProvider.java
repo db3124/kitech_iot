@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class ConnectionProvider {
 	
 	public static Connection getConnection() throws SQLException {
-		
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+				
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl"; 
 		String user = "scott";
 		String pw = "tiger";
 		

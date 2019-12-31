@@ -1,7 +1,7 @@
 package model;
 
 public class OpMember {
-	
+
 	private int idx;
 	private String uid;
 	private String pw;
@@ -10,7 +10,7 @@ public class OpMember {
 	private String gender;
 	private String uphoto;
 	
-	public OpMember(int idx, String uid, String pw, String uname, int byear, String gender, String uphoto) {
+	public OpMember(int idx, String uid, String pw, String uname, int byear, String gender, String uphoto) {		
 		this.idx = idx;
 		this.uid = uid;
 		this.pw = pw;
@@ -84,5 +84,13 @@ public class OpMember {
 		return "OpMember [idx=" + idx + ", uid=" + uid + ", pw=" + pw + ", uname=" + uname + ", byear=" + byear
 				+ ", gender=" + gender + ", uphoto=" + uphoto + "]";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
