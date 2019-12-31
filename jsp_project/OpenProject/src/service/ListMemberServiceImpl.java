@@ -10,7 +10,7 @@ import dao.MemberDao;
 import jdbc.ConnectionProvider;
 import model.OpMember;
 
-public class LIstMemberServiceImpl implements MemberService {
+public class ListMemberServiceImpl implements MemberService {
 
 	@Override
 	public String process(HttpServletRequest request) {

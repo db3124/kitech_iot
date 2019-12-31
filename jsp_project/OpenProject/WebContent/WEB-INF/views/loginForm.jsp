@@ -158,19 +158,18 @@
 					$.ajax({
 						url : 'kakaoLogin', // /op/login/kakaoLogin
 						data : {
-							email : obj.kakao_account.email,
-							nicname : obj.kakao_account.profile.nickname,
-							gender : obj.kakao_account.gender,
-							bday : obj.kakao_account.birthday,
-							photo : obj.kakao_account.profile.profile_image_url
+							email : user.kakao_account.email,
+							nicname : user.kakao_account.profile.nickname,
+							gender : user.kakao_account.gender,
+							bday : user.kakao_account.birthday,
+							photo : user.kakao_account.profile.profile_image_url
 						},
 						success : function(data){
 							if(data=='login') {
 								location.href='../users/myPage';
 							}
 						}
-					});
-					
+					});				
 					
 				},
 				fail : function() {
