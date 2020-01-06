@@ -1,13 +1,19 @@
-package memebr;
+package member;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MainForAssembler {
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainForSpring3 {
+	
 	
 	// 조립기 생성 : 객체들을 보관
-	private static Assembler assembler = new Assembler();
+	// Spring Container
+	private static ApplicationContext ctx = 
+			new GenericXmlApplicationContext("classpath:appCtx3.xml");
 	
 	/*
 	 * private static MemberRegisterService registerService =
@@ -40,8 +46,13 @@ public class MainForAssembler {
 			}
 			
 		}
+		
+		
+		
 
 	}
+	
+
 	
 	private static void processNewCommand(String[] args) {
 		
@@ -50,7 +61,10 @@ public class MainForAssembler {
 			return;
 		}
 		
-		MemberRegisterService service = assembler.getRegistService();
+		//MemberRegisterService service = assembler.getRegistService();
+		
+		MemberRegisterService service = 
+				ctx.getBean("registService", MemberRegisterService.class);
 		
 		RegisterRequest request = new RegisterRequest();
 		request.setEmail(args[1]);
@@ -71,7 +85,10 @@ public class MainForAssembler {
 			System.out.println("이미 존재하는 이메일입니다.");
 		}
 		
+		
 	}
+
+
 
 	private static void processChangeCommand(String[] args) {
 		
@@ -80,8 +97,11 @@ public class MainForAssembler {
 			return;
 		}
 		
-		ChangePasswordService service = assembler.getPwService();
-		
+		//ChangePasswordService service = assembler.getPwService();
+		ChangePasswordService service = 
+				ctx.getBean("changePwService", ChangePasswordService.class); 
+				
+				
 		try {
 			service.changePassword(args[1], args[2], args[3]);
 			System.out.println("암호가 변경되었습니다.");
@@ -96,12 +116,22 @@ public class MainForAssembler {
 		}
 		
 	}
+
 	
 	private static void printHelp() {
 		System.out.println("");
 		System.out.println("잘못된 명령 입니다. 아래 명령 사용법을 확인하세요.");
 		System.out.println("new 이메일 사용자이름 암호 암호확인");
 		System.out.println("change 이메일 현재암호 새로운암호");
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

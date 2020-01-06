@@ -1,4 +1,4 @@
-package memebr;
+package member;
 
 import java.util.Date;
 

@@ -1,15 +1,23 @@
-package memebr;
+package member;
 
 public class ChangePasswordService {
 	
 	//private MemberDao memberDao = new MemberDao();
 	
 	private MemberDao memberDao;
-	
-	public ChangePasswordService(MemberDao dao) {
-		memberDao = dao;
+
+	public void setMemberDao(MemberDao memberDao) {
+		this.memberDao = memberDao;
 	}
 	
+	
+//	public ChangePasswordService(MemberDao dao) {
+//		memberDao = dao;
+//	}
+	
+
+
+
 	public void changePassword(
 			String email, 
 			String oldPassword, 
@@ -22,7 +30,22 @@ public class ChangePasswordService {
 		}
 		member.changePassword(oldPassword, newPassword);
 		
-		memberDao.update(member);		
+		memberDao.update(member);
+		
 	}
+	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

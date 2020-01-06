@@ -1,4 +1,4 @@
-package memebr;
+package member;
 
 public class IdPasswordNotMatchingException extends Exception {
 
