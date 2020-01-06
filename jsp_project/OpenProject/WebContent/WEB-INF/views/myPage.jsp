@@ -47,10 +47,10 @@
 			<li>아이디 : ${loginInfo.uid}</li>
 			<li>성별 : ${loginInfo.gender}</li>
 			<li>태어난 해 : ${loginInfo.byear}</li>
-			<li>
-				<c:if test="${loginInfo.uphoto"> >
-					<img src="${loginInfo.uphoto}">
-				</c:if>
+			<li> 
+			<c:if test="${loginInfo.uphoto ne null}">
+				<img src="${loginInfo.uphoto}">
+			</c:if>			
 			</li>
 		</ul>
 	</c:if>

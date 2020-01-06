@@ -16,7 +16,7 @@ import service.EditMemberServiceImpl;
 import service.IdChkMemberServiceImpl;
 import service.IndexMemberServiceImpl;
 import service.KakaoLoginMemberServiceImpl;
-import service.ListMemberServiceImpl;
+import service.LIstMemberServiceImpl;
 import service.LoginFormMemberServiceImpl;
 import service.LoginMemberServiceImpl;
 import service.LogoutMemberServiceImpl;
@@ -51,7 +51,7 @@ public class FrontController extends HttpServlet {
 		uriMap.put("/member/idChk", new IdChkMemberServiceImpl());
 		
 		// 회원 리스트
-		uriMap.put("/member/list", new ListMemberServiceImpl());
+		uriMap.put("/member/list", new LIstMemberServiceImpl());
 				
 		// 회원 정보 수정
 		uriMap.put("/member/editForm", new EditFormMemberService());
@@ -76,7 +76,9 @@ public class FrontController extends HttpServlet {
 		
 		// 기능 확장 : Service 구현 클래스 생성 , view(JSP) 생성
 		
+		
 	}
+
 	
 	// 2. 모든 요청 처리
 	@Override
@@ -119,13 +121,43 @@ public class FrontController extends HttpServlet {
 				
 		if(ms!=null) {
 			viewPage = ms.process(request);
-		}		
+		}
+				
+				 
+		
 		
 		// 포워딩
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
-				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
