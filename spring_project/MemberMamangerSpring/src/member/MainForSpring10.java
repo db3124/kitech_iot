@@ -4,10 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MainForAssembler {
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainForSpring10 {
 
 	// 조립기 생성 : 객체들을 보관
-	private static Assembler assembler = new Assembler();
+	// Spring Container
+	private static ApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtx10.xml");
 
 	/*
 	 * private static MemberRegisterService registerService =
@@ -49,7 +53,9 @@ public class MainForAssembler {
 			return;
 		}
 
-		MemberRegisterService service = assembler.getRegistService();
+		// MemberRegisterService service = assembler.getRegistService();
+
+		MemberRegisterService service = ctx.getBean("registService", MemberRegisterService.class);
 
 		RegisterRequest request = new RegisterRequest();
 		request.setEmail(args[1]);
@@ -79,7 +85,8 @@ public class MainForAssembler {
 			return;
 		}
 
-		ChangePasswordService service = assembler.getPwService();
+		// ChangePasswordService service = assembler.getPwService();
+		ChangePasswordService service = ctx.getBean("changePwService", ChangePasswordService.class);
 
 		try {
 			service.changePassword(args[1], args[2], args[3]);

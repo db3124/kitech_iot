@@ -13,7 +13,7 @@ public class MainForSpring5 {
 	// 조립기 생성 : 객체들을 보관
 	// Spring Container
 	private static ApplicationContext ctx = 
-			new GenericXmlApplicationContext("classpath:appCtx6.xml");
+			new GenericXmlApplicationContext("classpath:appCtx5.xml");
 	
 	/*
 	 * private static MemberRegisterService registerService =

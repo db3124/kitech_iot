@@ -7,15 +7,16 @@
 	<!-- MemberDao 객체=bean 를 등록 -->
 	<bean id="memberDao" class="member.MemberDao" />
 
-
 	<!-- member.MemberRegisterService 빈 등록 -->
 	<bean id="registService" class="member.MemberRegisterService"
-		p:memberDao-ref="memberDao" />
-
+		autowire="byType">
+	</bean>
 
 	<!-- member.ChangePasswordService 빈 등록 -->
 	<bean id="changePwService" class="member.ChangePasswordService"
-		p:memberDao-ref="memberDao">
+		autowire="byType">
 	</bean>
 
 </beans>
+
+<!-- spring 사용 객체는 등록 후 사용. -> xml 설정파일 -->
