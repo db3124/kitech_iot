@@ -18,7 +18,7 @@ td {
 	<h1>로그인</h1>
 	<hr>
 
-	<form  method="post">
+	<form method="post">
 		<table>
 			<tr>
 				<td>아이디</td>

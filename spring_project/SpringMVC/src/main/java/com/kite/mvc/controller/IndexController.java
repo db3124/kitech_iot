@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller 
-public class indexController {
+public class IndexController {
 	
 	// 사용자 요청 경로 지정 : @RequestMapping
 	//@RequestMapping(value = "/index")
