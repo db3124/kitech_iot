@@ -1,19 +1,28 @@
-package com.kite.domain;
+package com.kite.jdbc.domain;
 
 import java.sql.Date; // 1970.01.01 00:00:00 ~ 현재 시간까지의 시간 : long타입의 밀리초 반환
 
 public class Member {
-	
+
 	private int id;
 	private String email;
 	private String password;
 	private String name;
 	private Date regdate;
-	
-	public Member() {
-		
+
+	public Member(int id, String email, String password, String name, Date regdate) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.regdate = regdate;
 	}
-	
+
+	public Member() {
+
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -59,8 +68,5 @@ public class Member {
 		return "Member [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", regdate="
 				+ regdate + "]";
 	}
-	
-	
-	
-	
+
 }
