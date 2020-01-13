@@ -14,22 +14,20 @@ public class MemberListController {
 	public String list() {
 		return "member/list";
 	}
-	
+
 	@RequestMapping("/member/search")
 	public String search() {
 		return "member/search";
 	}
-	
+
 	@ModelAttribute("searchOptions")
-	public List<String> optionList(){
-		
+	public List<String> optionList() {
 		List<String> options = new ArrayList<String>();
-		
-		options.add("아이디");
-		options.add("이름");
-		options.add("아이디+이름");
-		
+		options.add("ID");
+		options.add("Name");
+		options.add("ID+Name");
+
 		return options;
 	}
-	
+
 }

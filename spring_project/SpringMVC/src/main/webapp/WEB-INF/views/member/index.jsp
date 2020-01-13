@@ -17,6 +17,7 @@ li {
 
 	<h1>Spring MVC</h1>
 	<h3>${msg}</h3>
+
 	<hr>
 
 	<ul>
@@ -29,6 +30,7 @@ li {
 		<li><a href="<c:url value="/member/search" />">/member/search</a></li>
 		<li><a href="<c:url value="/member/view/cool" />">/member/view/cool</a></li>
 		<li><a href="<c:url value="/member/view/hot" />">/member/view/hot</a></li>
+		<li><a href="<c:url value="/fileupload/form" />">/fileupload/form</a></li>
 	</ul>
 
 </body>

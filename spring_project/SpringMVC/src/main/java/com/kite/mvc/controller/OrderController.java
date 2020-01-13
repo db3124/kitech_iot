@@ -13,21 +13,21 @@ import com.kite.mvc.service.OrderCommand;
 public class OrderController {
 
 	// get : 입력 폼
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String orderForm(Model model) {
-		
+
 		model.addAttribute("title", "주문 폼");
-		
+
 		return "order/orderForm";
 	}
-	
+
 	// post : 입력 데이터 표현
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public String order(@ModelAttribute("orderInfo") OrderCommand order) {
-		
+
 		System.out.println(order);
-		
+
 		return "order/order";
 	}
-	
+
 }

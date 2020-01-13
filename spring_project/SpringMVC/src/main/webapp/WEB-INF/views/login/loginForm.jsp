@@ -4,16 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
-
+<title>Insert title here</title>
 <style>
 td {
 	padding: 10px;
 }
 </style>
-
 </head>
-
 <body>
 	<h1>로그인</h1>
 	<hr>
@@ -21,7 +18,7 @@ td {
 	<form method="post">
 		<table>
 			<tr>
-				<td>아이디</td>
+				<td>아아디</td>
 				<td><input type="text" name="uid"></td>
 			</tr>
 			<tr>
@@ -29,9 +26,11 @@ td {
 				<td><input type="password" name="pw"></td>
 			</tr>
 			<tr>
-				<td colsapn="2"><input type="submit" value="로그인"></td>
+				<td colspan="2"><input type="submit" value="로그인"></td>
 			</tr>
 		</table>
+
 	</form>
+
 </body>
 </html>
