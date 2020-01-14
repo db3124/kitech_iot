@@ -31,7 +31,14 @@ public class MemberRegController {
 		
 		model.addAttribute("result", service.regMember(request));
 		
+		
 		return "member/reg";
 	}
+	
+	
+	
+	
+	
+	
 
 }
