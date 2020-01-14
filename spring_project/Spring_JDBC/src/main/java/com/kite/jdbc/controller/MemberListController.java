@@ -15,31 +15,34 @@ public class MemberListController {
 
 	@Autowired
 	MemberListService service;
-	
+
 	@RequestMapping("/member/list")
 	public String getMemberList(Model model) {
-		
+
 		List<Member> members = service.getMemberList();
-		
+
 		for (Member member : members) {
 			System.out.println(member);
 		}
-		
+
 		model.addAttribute("members", members);
-		
-		return "member/list"; 
-		//     /WEB-INF/views/member/list.jsp
+
+		return "member/list";
+		// /WEB-INF/views/member/list.jsp
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@RequestMapping("/member/list2")
+	public String list(Model model) {
+
+		List<Member> members = service.getList();
+
+		for (Member member : members) {
+			System.out.println(member);
+		}
+
+		model.addAttribute("members", members);
+
+		return "member/list";
+	}
+
 }
