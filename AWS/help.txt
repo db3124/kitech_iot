@@ -1,0 +1,26 @@
+http://ec2-54-180-98-143.ap-northeast-2.compute.amazonaws.com:8080/
+
+13.209.17.110
+
+1. AWS-Mysql.5.7-root
+
+project schema  project  utf8
+
+users and privileges - add account - kite - kite1111 - apply
+
+schema privilege - add entry(project) - select all - apply
+
+
+1. AWS-Mysql.5.7-kite
+
+data export - project
+guestbok,  opmember
+dump structure and data
+start export
+
+data import - dump 폴더 - starting import
+
+sts
+membermanager - export - 바탕화면 mm.war - finish
+
+
