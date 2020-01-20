@@ -10,6 +10,6 @@ unique key (EMAIL)
 INSERT INTO `project`.`member`
 (`EMAIL`, `PASSWORD`, `NAME`, `REGDATE`)
 VALUES
-('test@test', '1111', 'tester', now());
+('test2@test', '2222', 'tester2', now());
 
 
