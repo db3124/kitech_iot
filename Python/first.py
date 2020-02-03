@@ -1,4 +1,49 @@
-print('First Python') # print 실행
+# 문자열을 다루는 기본 함수
+# string_str = 'Hello Python'
+
+# string_list = string_str.split(" ")
+# print(string_list)
+
+# string_str = "001code1234spaceA15000"
+string_str = "001|code1234|spaceA|15000"
+string_list = string_str.split("|")
+print("PK : ", string_list[0])
+print("Code : ", string_list[1])
+print("Name : ", string_list[2])
+print("Price : ", int(string_list[3])*1.15)
+
+print(string_str.upper())
+print(string_str.lower())
+
+string_a = "{}".format(19)
+print(string_a)
+print(type(string_a))
+
+string_b = "{}원".format(19000)
+print(string_b)
+print(type(string_b))
+
+string_c = "{}, {}, {}".format(5000, 6000, 7000)
+print(string_c)
+print(type(string_c))
+
+string_d = "{}, {}, {}".format('문자열', 6000, True)
+print(string_d)
+print(type(string_d))
+
+# 사용자 데이터 입력
+# age = input('나이 입력 : ')
+# print(type(age))
+# print(age)
+
+# string_a = input('숫자 입력>>>')
+# string_b = input('다른 숫자 입력>>>')
+
+# int_a = int(string_a)
+# int_b = int(string_b)
+
+# print(string_a+string_b)
+# print(int_a+int_b)
 
 # 숫자 연산
 print('-----숫자 연산-----')
