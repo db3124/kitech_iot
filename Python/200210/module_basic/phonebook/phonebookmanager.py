@@ -1,4 +1,4 @@
-# 데이터 wj장을 위한 class
+# 데이터 저장을 위한 class
 # 기능 class -> 기능 모듈
 # 데이터를 저장하고 있는 배열 또는 리스트 -> []
 # 기능 메서드 : 입력(리스트에), 삭제(리스트에서), 검색, 전체 출력
@@ -18,6 +18,10 @@ def insertMember():
     } 
 
     pBook.append(member)
+
+def deleteMember():
+    if 
+    pass
 
 def showList():
     for member in pBook:
