@@ -57,7 +57,7 @@ def insertMember():
 # 리스트 출력하는 메서드
 def showList():
     for member in pBook:
-        # print(member)
+        print(member)
         # member.showInfo()
 
 # 정보 검색하는 메서드
@@ -71,7 +71,6 @@ def searchInfo():
     for member in pBook:
         if member.checkInfo(keyword):
             # member.showInfo()
-            # __str__()
             print(member)
             chk_num += 1
     
