@@ -1,13 +1,13 @@
-# 데이터 저장을 위한 class
-# 기능 class -> 기능 모듈
-# 데이터를 저장하고 있는 배열 또는 리스트 -> []
 # 기능 메서드 : 입력(리스트에), 삭제(리스트에서), 검색, 전체 출력
 
-#from phonebook_class import PhoneInfo
+## db 연결
+# 전화번호를 primary key로 설정.
+# --> 이름이 중복됐을 때 개인 고유번호로
+# --> 설정했을 시 검색 및 삭제는 이름&전화번호로 하기
 
-# class 정의 : PhoneInfo
-# 속성 : name, phonenumber, birthday
-# 기능 : showInfo
+## 아래 처리를 어디에 넣어야할 지 모르겠음.
+# - 검색 : 찾고자 하는 이름이 db에 없을 때 print('찾고자 하는 이름이 없습니다.') 처리
+# - 삭제 : 삭제하고자 하는 이름이 db에 없을 때 print('삭제하고자 하는 이름이 없습니다.') 처리
 
 import sqlite3
 
