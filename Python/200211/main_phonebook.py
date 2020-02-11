@@ -8,9 +8,9 @@ while True:
     if choice == '1':
         pbm.insertMember()
     elif choice == '2':
-        pbm.showList()
+        pb5m.showList()
     elif choice == '3':
-        pbm.searchInfo()4
+        pbm.searchInfo()
     elif choice == '4':
         pbm.deleteInfo()
     elif choice == '5':
