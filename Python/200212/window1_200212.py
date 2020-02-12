@@ -4,12 +4,6 @@ from tkinter import messagebox
 # tkinter? 파이썬에서 GUI 관련된 모듈 제공하는 lib
 # C:\Users\bitcamp2\AppData\Local\Programs\Python\Python38-32\Lib\tkinter
 
-# window 생성
-window = Tk()
-
-# window 이름 설정
-window.title("My First Window")
-
 # 이벤트 함수 : 핸들러 함수
 def myFunc():
     messagebox.showinfo('London', 'This is London.')
@@ -29,6 +23,12 @@ def radioFunc():
         label_c.configure(text='C')
     else:
         messagebox.showinfo('', '정상적인 입력 데이터가 아닙니다.')
+
+# window 생성
+window = Tk()
+
+# window 이름 설정
+window.title("My First Window")
 
 # window 크기 지정 ex) '(폭) 100 x (높이) 100'
 window.geometry('700x400')

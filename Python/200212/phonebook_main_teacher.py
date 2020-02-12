@@ -1,4 +1,4 @@
-from module_basic.phonebook import phonebookmanager_teacher as pbms
+from module_basic.phonebook import phonebookmanager_sqlite as pbms
 import sys
 
 # 최초 프로그램 실행하면 DB 에서 데이터를 가져와서 list에 저장을 한다.
@@ -20,6 +20,5 @@ while True:
     elif choice=='5':
         #break
         sys.exit()
-    
     else :
         print('유요한 메뉴번호가 아닙니다. 확인해주세요')

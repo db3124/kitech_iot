@@ -1,12 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
-# handler function
+# event handler
 def key_event(event):
     print(event)
-    messagebox.showinfo('키 이벤트', '눌러진 키 :'+(event.keycode))
+
+    messagebox.showinfo('키보드 이벤트', '(' + str(event.x) + ', ' + str(event.y) + ')')
 
 # 위젯
-window = Tk()
+window=Tk()
+window.geometry('300x300')
 
 window.bind('<Key>', key_event)
 
