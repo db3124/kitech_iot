@@ -34,6 +34,7 @@ def insertMember():
 
 # 리스트 출력하는 메서드
 def showList():
+    # SQL 실행
     sql_select = 'select * from phonebook_table'
 
     cur.execute(sql_select)
