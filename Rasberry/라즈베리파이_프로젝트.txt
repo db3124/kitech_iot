@@ -1,0 +1,22 @@
+라즈베리파이3 B+
+Ⅰ. 설정
+------------------연결 전------------------
+1. SD CARD FORMATTER 설치
+2. NOOBS 설치
+3. FORMATTER로 포맷한 후, NOOBS 파일 SD CARD로 옮기기
+4. USB 마우스 및 키보드 연결
+5. HDMI 키보드 연결
+6. USB 5핀 전원 연결
+------------------연결 후------------------
+7. 언어, 키보드 레이아웃 설정
+8. 라즈비안(Recommended) 설치
+9. country, language, timezone 설정
+10. default 사용자 : pi
+11. New password : admin
+12. WiFi 연결
+13. Update Software
+14. 여러 기능 살피기
+15. Terminal 매우 중요 - python 테스트. 버전 업글/다운글
+16. Rasberry Pi Configuration - 비밀번호, 사용자, 인터페이스(카메라, 등), 나라, 언어 등
+
+Ⅱ.
