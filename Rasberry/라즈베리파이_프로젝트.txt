@@ -7,16 +7,58 @@
 4. USB 마우스 및 키보드 연결
 5. HDMI 키보드 연결
 6. USB 5핀 전원 연결
++ 방열판 2개 붙이기
 ------------------연결 후------------------
 7. 언어, 키보드 레이아웃 설정
 8. 라즈비안(Recommended) 설치
 9. country, language, timezone 설정
 10. default 사용자 : pi
 11. New password : admin
+
 12. WiFi 연결
 13. Update Software
 14. 여러 기능 살피기
 15. Terminal 매우 중요 - python 테스트. 버전 업글/다운글
 16. Rasberry Pi Configuration - 비밀번호, 사용자, 인터페이스(카메라, 등), 나라, 언어 등
 
-Ⅱ.
+Ⅱ. 터미널 명령어 알아보기
+1. sudo raspi-config : 환경설정
+2. 
+(1) sudo useradd -m -d /home/king king : -m(사용자의 홈 디렉터리 생성)
+    sudo passwd king
+    암호 설정 후 기억하기 : admin
+    sudo addgroup king sudo : 사용자 king을 sudo  그룹에 등록(supervisor 권한)
+(2) sudo adduser scott
+    비밀번호 : admin
+    Is the information correct? y
+    clear
+    sudo addgroup scott sudo : 사용자 scott을 sudo 그룹에 등록
+(3) cd../
+    ls : 폴더 리스트
+    ls -a : 숨겨진 항목 포함 폴더 리스트
+    ls -al : 폴더 정보 상세
+    /home $ cd king : king 계정으로 들어감
+    /home/king
+(4) reboot
+    sudo reboot : 껐다가 다시 킴
+    sudo shutdown -r now : 껐다가 다시 킴
+(5) sudo apt-get update : 업데이트
+    sudo apt-get upgrade : 패키지 업그레이트
+    sudo apt-get install vsftpd : ftp 서버 프로그램 설치
+(6) pwd
+    ls 
+    cd Desktop
+    ~/Desktop ls -al : ~는 home이란 뜻
+    ~/Desktop $ mkdir project
+    ~/Desktop ls -al
+    ~/Desktop mv project /home/pi/Documents : project 폴더 옮기기
+   cd home/pi/Documents
+
+Ⅲ. ftp 서버
+(1) SSH : ENABLED
+    아이피 192.168.0.66/24
+    putty
+(2) sudo service vsftpd [start, restart, stop, status]
+    sudo service vsfpd
+    sudo service vsfpd status
+(3) 파일질라 : ftp 클라이언트 프로그램
