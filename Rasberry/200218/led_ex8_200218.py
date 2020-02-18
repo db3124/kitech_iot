@@ -12,20 +12,20 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 # 핀 번호 설정: Channel 번호
-LED_R = 11
-LED_G = 16
-LED_Y = 22
+LED_R = 11 # 빨간색 LED
+LED_G = 16 # 초록색 LED
+LED_Y = 22 # 빨간색 LED
 
 # 11번 채널(핀 번호)을 출력 핀을 등록, 초기 출력은 로우레벨(low level), Low = 0, False
-GPIO.setup(LED_R, GPIO.OUT, initial = GPIO.LOW)
-GPIO.setup(LED_Y, GPIO.OUT, initial = GPIO.LOW)
-GPIO.setup(LED_G, GPIO.OUT, initial = GPIO.LOW)
-
+GPIO.setup(LED_R, GPIO.OUT, initial=GPIO.LOW)
+# 16번 핀 출력 핀으로 등록    
+GPIO.setup(LED_G, GPIO.OUT, initial=GPIO.LOW) 
+# 22번 핀 출력 핀으로 등록    
+GPIO.setup(LED_Y, GPIO.OUT, initial=GPIO.LOW)
 
 print ('=====================>LED_R: ', GPIO.input(LED_R))
 print ('=====================>LED_G: ', GPIO.input(LED_G))
 print ('=====================>LED_Y: ', GPIO.input(LED_Y))
-
 
 # 하이 레벨 출력 = 점등
 def func_g():
@@ -33,8 +33,7 @@ def func_g():
         btn_g.configure(text='초록등 - OFF')
     else: # 0 : OFF
         func_clear()
-        btn_g.configure(text='초록등 - ON')
-
+        
     GPIO.output(LED_G, not GPIO.input(LED_G))
 
 def func_y():
@@ -42,8 +41,7 @@ def func_y():
         btn_y.configure(text='노란등 - OFF')
     else: # 0 : OFF
         func_clear()
-        btn_y.configure(text='노란등 - ON')
-
+        
     GPIO.output(LED_Y, not GPIO.input(LED_Y))
 
 def func_r():
@@ -51,8 +49,7 @@ def func_r():
         btn_r.configure(text='빨간등 - OFF')
     else: # 0 : OFF
         func_clear()
-        btn_r.configure(text='빨간등 - ON')
-
+        
     GPIO.output(LED_R, not GPIO.input(LED_R))
 
 # channel 값을 0
@@ -60,6 +57,9 @@ def func_clear():
     GPIO.output(LED_G, False)
     GPIO.output(LED_Y, 0)
     GPIO.output(LED_R, GPIO.LOW)
+    btn_g.configure(text='초록등 - ON')
+    btn_y.configure(text='노란등 - ON')
+    btn_r.configure(text='빨간등 - ON')
 
 # 윈도우 객체
 window = tk.Tk()
@@ -85,6 +85,3 @@ window.mainloop()
 
 # GPIO 개방
 GPIO.cleanup()
-
-
-

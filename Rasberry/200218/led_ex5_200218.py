@@ -11,21 +11,21 @@ import time
 #핀 번호 할당으로 처리: 핀 번호 설정
 GPIO.setmode(GPIO.BOARD)
 
-#핀 번호 설정: Channel 번호
-LED_R = 11
-LED_G = 16
-LED_Y = 22
+# 핀 번호 설정: Channel 번호
+LED_R = 11 # 빨간색 LED
+LED_G = 16 # 초록색 LED
+LED_Y = 22 # 빨간색 LED
 
-#11번 채널(핀 번호)을 출력 핀을 등록, 초기 출력은 로우레벨(low level), Low = 0, False
-GPIO.setup(LED_R, GPIO.OUT, initial = GPIO.LOW)
-GPIO.setup(LED_Y, GPIO.OUT, initial = GPIO.LOW)
-GPIO.setup(LED_G, GPIO.OUT, initial = GPIO.LOW)
-
+# 11번 채널(핀 번호)을 출력 핀을 등록, 초기 출력은 로우레벨(low level), Low = 0, False
+GPIO.setup(LED_R, GPIO.OUT, initial=GPIO.LOW)
+# 16번 핀 출력 핀으로 등록    
+GPIO.setup(LED_G, GPIO.OUT, initial=GPIO.LOW) 
+# 22번 핀 출력 핀으로 등록    
+GPIO.setup(LED_Y, GPIO.OUT, initial=GPIO.LOW)
 
 print ('=====================>LED_R: ', GPIO.input(LED_R))
 print ('=====================>LED_G: ', GPIO.input(LED_G))
 print ('=====================>LED_Y: ', GPIO.input(LED_Y))
-
 
 #하이 레벨 출력 = 점등
 def func():
