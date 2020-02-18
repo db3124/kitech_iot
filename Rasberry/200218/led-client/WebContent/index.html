@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--CDN 방식으로 jQuery 라이브러리를 로드-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"
+	integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+	crossorigin="anonymous"></script>
+
+<style>
+input[type=button] {
+	background-color: #EEE;
+	border: 1px solid #AAA;
+	pading: 15px 0;
+	margin: 10px;
+	display: block;
+	font-size: 24px
+}
+
+.select_g {
+	background-color: darkgreen;
+	color: #FFF
+}
+
+.select_y {
+	background-color: yellow;
+	color: #FFF
+}
+
+.select_r {
+	background-color: red;
+	color: #FFF
+}
+</style>
+
+
+</head>
+<body>
+	<h1>신호등 컨트롤러</h1>
+	<input type="button" value="초록등 키기" id="btn_g">
+	<br>
+	<input type="button" value="노란등 키기" id="btn_y">
+	<br>
+	<input type="button" value="빨간등 키기" id="btn_r">
+	<br>
+	<script>
+		$(document).ready(function() {
+			// 초록등 버튼 클릭 시
+			$('#btn_g').click(function() {
+
+				$.ajax({
+					url : 'http://192.168.0.66:5000/sw_g',
+					success : function(res) {
+						if (res == '1') {
+							$('#btn_g').val('초록등 끄기');
+							$('#btn_g').addClass('select_g')
+						} else {
+							$('#btn_g').val('초록등 키기');
+							$('#btn_g').removeClass('select_g')
+						}
+					}
+				});
+
+			});
+			// 노란등 버튼 클릭 시
+			$('#btn_y').click(function() {
+
+				$.ajax({
+					url : 'http://192.168.0.66:5000/sw_y',
+					success : function(res) {
+						if (res == '1') {
+							$('#btn_y').val('노란등 끄기');
+							$('#btn_y').addClass('select_y')
+						} else {
+							$('#btn_y').val('노란등 키기');
+							$('#btn_y').removeClass('select_y')
+						}
+					}
+				});
+
+			});
+			// 빨간등 버튼 클릭 시
+			$('#btn_r').click(function() {
+
+				$.ajax({
+					url : 'http://192.168.0.66:5000/sw_r',
+					success : function(res) {
+						if (res == '1') {
+							$('#btn_r').val('빨간등 끄기');
+							$('#btn_r').addClass('select_r')
+						} else {
+							$('#btn_r').val('빨간등 키기');
+							$('#btn_r').removeClass('select_r')
+						}
+					}
+				});
+
+			});
+
+		});
+	</script>
+
+</body>
+</html>

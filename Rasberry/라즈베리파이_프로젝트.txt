@@ -67,4 +67,9 @@
 (1) LED 키는 Python 코드 작성 : import RPi.GPIO as GPIO
 (2) Desktop/rasp/led에 스크립트 파일 이동
 (3) channel 제대로 설정
+(4) 본 컴퓨터에서 라즈비안 ip로 접속하여(putty) 조작
+    웹 연결 flask 이용 : sudo pip install flask
+    스크립트 파일을 파일질러를 통해 이동
+    putty를 통함 : cd /home/pi/Desktop/rasp/led
+    CORS(app)
 
