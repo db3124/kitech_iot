@@ -62,3 +62,9 @@
     sudo service vsfpd
     sudo service vsfpd status
 (3) 파일질라 : ftp 클라이언트 프로그램
+
+Ⅳ. LED 켜기
+(1) LED 키는 Python 코드 작성 : import RPi.GPIO as GPIO
+(2) Desktop/rasp/led에 스크립트 파일 이동
+(3) channel 제대로 설정
+
