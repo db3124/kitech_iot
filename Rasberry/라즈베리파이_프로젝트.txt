@@ -55,7 +55,7 @@
    cd home/pi/Documents
 
 Ⅲ. ftp 서버
-(1) SSH : ENABLED
+(1) SSH : ENABLED(in 라즈비안)
     아이피 192.168.0.66/24
     putty
 (2) sudo service vsftpd [start, restart, stop, status]
@@ -72,4 +72,8 @@
     스크립트 파일을 파일질러를 통해 이동
     putty를 통함 : cd /home/pi/Desktop/rasp/led
     CORS(app)
+
+Ⅴ. LED 밝기 변경
+(1) PWM(Pulse Width Modulation) : 펄스 폭 변조
+    하이 레벨과 로우 레벨의 중간 값을 유사하게 표현하는 신호 방식
 

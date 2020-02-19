@@ -57,21 +57,21 @@ def func_clear():
     GPIO.output(LED_Y, 0)
     GPIO.output(LED_R, GPIO.LOW)
     
-# =====================================================
+# =====================앱 설정===========================
 
 app = Flask(__name__)
 
 CORS(app)
 
-@ app.route('/sw_g') # swith green
+@ app.route('/sw_g') # switch green
 def sw_g():
     return func_g()
 
-@ app.route('/sw_y') # swith yellow
+@ app.route('/sw_y') # switch yellow
 def sw_y():
     return func_y()
 
-@ app.route('/sw_r') # swith red
+@ app.route('/sw_r') # switch red
 def sw_r():
     return func_r()
 
