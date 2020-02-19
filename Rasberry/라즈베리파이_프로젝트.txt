@@ -55,7 +55,7 @@
    cd home/pi/Documents
 
 Ⅲ. ftp 서버
-(1) SSH : ENABLED(in 라즈비안)
+(1) SSH : Enable(in 라즈비안)
     아이피 192.168.0.66/24
     putty
 (2) sudo service vsftpd [start, restart, stop, status]
@@ -85,3 +85,12 @@
     포트도 설정 바꿀 수 있음
     test_app_200219.py
 (4) 클라이언스 서버 생성
+
+Ⅵ. 카메라 센서 사용
+(1) 카메라 센서 부착
+(2) Interface - Camera - Enable
+(3) 테스트 하기 : raspistill -v -o test.jpg : test.jpg로 저장
+(4) 해상도 설정, 파일 이름 및 해상도 입력 받기
+    picamera_1_200219.py 사진 촬영
+    picamera_2_200219.py 동영상 촬영
+    picamera_3_200219.py 사진 촬영, 경로 지정
