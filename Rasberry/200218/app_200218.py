@@ -58,7 +58,6 @@ def func_clear():
     GPIO.output(LED_R, GPIO.LOW)
     
 # =====================앱 설정===========================
-
 app = Flask(__name__)
 
 CORS(app)

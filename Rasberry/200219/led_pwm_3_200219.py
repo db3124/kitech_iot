@@ -20,7 +20,8 @@ GPIO.setup(LED_R, GPIO.OUT, initial=GPIO.LOW)
 # PWM 객체 생성 : 11번 핀, 주파수 - 100Hz
 p = GPIO.PWM(LED_R, 100)
 
-
+# PWM 신호 출력
+p.start(0)
 
 import tkinter as tk
 
@@ -32,8 +33,10 @@ window.geometry('400x400')
 led_value = tk.DoubleVar()
 led_value.set(0)
 
+#############################################
+
 # duty 값 변경하는 함수
-def change_duty():
+def change_duty(dc):
     p.ChangeDutyCycle(led_value.get())
 
 # 슬라이드 객체
