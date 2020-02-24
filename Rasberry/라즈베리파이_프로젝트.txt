@@ -107,4 +107,4 @@ pir_1_200224.py
 (1) sudo pip3 install Adafruit_DHT
 
 Ⅸ. DC 모터
-
+(1) 별도 모듈 설치 필요 없음
