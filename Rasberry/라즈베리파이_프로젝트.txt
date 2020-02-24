@@ -95,7 +95,16 @@
     picamera_2_200219.py 동영상 촬영
     picamera_3_200219.py 사진 촬영, 경로 지정
 
-Ⅶ. led
+Ⅶ. led, 모션 센서
+위치 감지 후 led on/off
 (1) 코블러, 코블러케이블 연결 : 라즈베리파이의 GPIO핀을 브레드보드에서 사용할 수 있도록 한 전자부품.
 (2) sudo apt-get install xrdp : 원격 연결을 위해 xrdp 설치(우분투)
 (3) 원격 데스크톱 연결 : Session-Xorg, username-pi, password-admin
+led_1_200224.py
+pir_1_200224.py
+
+Ⅷ. 온습도 센서
+(1) sudo pip3 install Adafruit_DHT
+
+Ⅸ. DC 모터
+
