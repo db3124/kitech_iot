@@ -1,8 +1,7 @@
 # coding : utf-8
 
-# flask
-from flask import Flask
-from flask_cors import CORS
+#
+from _cors import CORS
 
 # GPIO 모듈
 import RPi.GPIO as GPIO
@@ -58,7 +57,7 @@ def func_clear():
     GPIO.output(LED_R, GPIO.LOW)
     
 # =====================앱 설정===========================
-app = Flask(__name__)
+app = (__name__)
 
 CORS(app)
 
