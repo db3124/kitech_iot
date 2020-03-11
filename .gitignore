@@ -23,7 +23,7 @@ ipython_config.py
 bin/
 tmp/
 *.tmp
-*.bak
+*.bak 
 *.swp
 *~.nib
 local.properties
