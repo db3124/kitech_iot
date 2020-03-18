@@ -16,9 +16,9 @@ def data_get():
         'pw' : 'password1'
         },
         {
-        'id' : 'cool',
-        'name' : 'jane',
-        'pw' : 'password1'
+        'id' : 'hot',
+        'name' : 'jeje',
+        'pw' : 'password2'
         }
     ]
 
